@@ -1,0 +1,86 @@
++ compose : R.compose(a, b, c, d)
+	- a, b, c, d. là các hàm
+	- R.compose thực hiện các hàm từ phải sang trái
+	- dữ liệu trả về từ các hàm bên phải được truyền vào 		
+	các hàm ở bên trái
+
++ pipe : R.pipe(a, b, c, d)
+	- a, b, c, d là các hàm 
+	- R.pipe thực hiện các hàm từ phải sang trái
+	- dữ liệu trả về từ các hàm bên trái được truyền vào 
+	các hàm bên phải
+
++ curry : R.curry(calc(a, b))
+	- trả về một hàm mới với tham số là các đối số
+	tại thời điểm gọi hàm còn thiếu
+	- ví dụ : calc(a, b) => a+b
+	gọi hàm calc truyền vào 1 đối số calc(1)
+	sẽ trả về hàm mới calc(b) => 1 + b
+
++ useWith : R.useWith(function,[curryFunction,curryFunction])
+	- nhận vào 2 tham số 
+		- tham số thứ nhất là 1 hàm
+		- tham số thứ 2 là 1 mảng curry function
+	- (*)trả về 1 function mới với tham số lần lượt là tham số của các curryFunction trong 
+  	mảng (khác với **)
+	- đối số của function mới được đưa vào các curryFunction trong mảng
+	- dữ liệu trả về từ curryFunction được truyền vào làm đối số của function
+	- đối số được truyền lên function mới nhiều hơn sẽ chuyển trực tiếp vào function
+
++ converge : R.converge(function,[curryFunction,curryFunction])
+	- nhận vào 2 tham số 
+		- tham số thứ nhất là 1 hàm
+		- tham số thứ 2 là 1 mảng curry function
+	- (**)trả về 1 function mới với 1 tham số truyền cho tất cả curryFunction trong 
+  	mảng (khác với *)
+	- đối số của function mới được đưa vào các curryFunction trong mảng
+	- dữ liệu trả về từ curryFunction được truyền vào làm đối số của function
+
++ prop : R.prop(key,{key:value})
+	- nhận vào 2 tham số 
+		- tham số thứ nhất là key mang giá trị muốn tìm kiếm
+		- tham số thứ 2 là mảng hoặc object
+	- trả về giá trị nếu key tồn tại hoặc undefined nếu key không tồn tại
+ 
++ juxt : R.juxt([function,function,function])
+	- nhận vào một mảng các function
+	- trả về một curry function mới nhận vào danh sách các giá trị áp dụng cho các function trong mảng
+
++ nthArg : R.nthArg(n)
+	- trả về 1 function mới với đối số n đã được cung cấp
+	- nhận vào 1 tham số là Spread Operator
+	- function mới trả về phần tử thứ n của tham số hoặc undefined nếu không tồn tại
+
++ pluck : R.pluck(key) => new function(array or object) => new array or object
+	- trả về 1 function mới nhận vào 1 mảng hoặc object làm đối số
+	- trả về 1 mảng hoặc object mới các phần tử được tìm theo key truyền vào R.pluck
+ 	- trả về item undefined nếu không tìm thấy giá trị
+
++ call : R.call(function,a,b,c)
+	- R.call nhận vào đối số đầu tiên là 1 function
+	- R.call sẽ thực hiện đối số đầu tiên và truyền các đối số phía sau vào làm đối số cho đối số đầu 
+	tiên
+
++ apply : R.apply(function,[a,b,c])
+	- R.apply nhận vào 2 tham số
+		- tham số thứ nhất là 1 function
+		- tham số thứ 2 là một mảng danh sách các đối số
+	- R.apply sẽ áp dụng function cho danh sách đối số 
+
++ path : R.path(['a','b'],{a:{b:'value'}})
+	- R.path nhận vào 2 tham số
+		- tham số thứ nhất là mảng các giá trị theo thứ tự sẽ là đường dẫn tới giá trị muốn tìm kiếm
+		- tham số thứ 2 là dữ liệu có chứa giá trị muốn tìm kiếm
+	- R.path sẽ tìm kiếm dữ liệu trong đối số thứ 2 theo đường dẫn được đối số thứ nhất cung cấp
+
++ pick : R.pick 
+	- tham số thứ nhất là mảng chứa các khoá chỉ định
+	- tham số thứ 2 là object
+	- trả về một bản sao các phần tử theo các khoá trong tham số thứ nhất
+	- nếu khoá không tồn tại sẽ được bỏ qua
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+JS docs
+
++ @param
+    - sử dụng @param để cung cấp thông tin về kiểu dữ liệu tên tham số và mô tả của nó
+    - khi sử dụng @param tên của tham số là bắt buộc
+    - có thể không cần cung cấp thông tin kiểu dữ liệu hoặc mô tả
+    - cung cấp kiểu dữ liệu có thể là một hoặc nhiều kiểu dữ liệu hợp lệ trong javascript
+    - trường hợp tham số có thể có nhiều kiểu dữ liệu sử dụng | để ngăn cách vd: (number|string)
+    - khi cung cấp mô tả cho @param có thể dùng dấu - trước mô tả để thêm dõ dàng
+
++ @returns
+    - sử dụng @returns để cung cấp thông tin về kiểu dữ liệu và mô tả cho dữ liệu trả về
+    - @returns không cung cấp tên
+    - cung cấp kiểu dữ liệu có thể là một hoặc nhiều kiểu dữ liệu hợp lệ trong javascript
+    - trong trường hợp có khả năng xuất hiện nhiều kiểu dữ liệu trả về sử dụng | tương tự như @param
+    - khi cung cấp mô tả cho @returns có thể dùng dấu - trước mô tả để thêm dõ dàng
+
++ @property
+    - cung cấp thông tin về các thuộc tính tĩnh của class, namespace hoặc object
+    - @property cung cấp thông tin về kiểu dữ liệu tên thuộc tính và mô tả về thuộc tính đó
+    - tương tự như @param tên thuộc tính là bắt buộc
+    - khi cung cấp mô tả cho @property cũng tương tự như @returns và @param
+    - @property chỉ được sử dụng cho thuộc tính tồn tại và nó trích dẫn
